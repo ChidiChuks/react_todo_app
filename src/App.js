@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Todo from './Todo';
 import { Button, FormControl, InputLabel, Input } from '@material-ui/core';
 import './App.css';
-import db from './firebase';
+import db from './src/firebase';
 
 function App() {
 
