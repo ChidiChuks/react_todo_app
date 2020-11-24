@@ -50,7 +50,7 @@ function Todo(props) {
         onClose={handleClose}
         >
             <div className={classes.paper}>
-                <h1>I am a modal</h1>
+                <h1>{props.todo.todo}</h1>
                 <input placeholder={props.todo.todo} value={input} onChange={event => setInput(event.target.value)} />
                 <Button onClick={updateTodo}>Update Todo</Button>
             </div>
@@ -66,11 +66,11 @@ function Todo(props) {
 
                 <ListItemText primary={props.todo.todo} secondary={Date.now()} />
 
-            </ListItem>
-
             <Button onClick={e => setOpen(true)}>Edit Me</Button>
 
-            <DeleteOutlineIcon onClick={event => db.collection('todos').doc(props.todo.id).delete()} />
+            <DeleteOutlineIcon color="action" onClick={event => db.collection('todos').doc(props.todo.id).delete()} />
+
+            </ListItem>
 
         </List>
         </>
